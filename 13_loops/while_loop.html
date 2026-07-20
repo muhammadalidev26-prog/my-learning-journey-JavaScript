@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating Tables based on User input</title>
+
+  <style>
+    input,
+    button {
+      padding: 5px 15px;
+      font-size: 1.2rem;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    button{
+      background-color: rgb(17, 17, 119);
+      color: white;
+      border: none;;
+      padding: 7px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="number" name="table-number" id="table-number" placeholder="Enter a number">
+  <button type="button" id="submit-btn">click</button>
+  <pre id="my-paragraph" style="font-size: 1.4rem;"></pre>
+
+  <script>
+    const paragraph = document.getElementById("my-paragraph");
+    const table_number = document.getElementById("table-number");
+    const submitBtn = document.getElementById("submit-btn");
+
+    // Wrap the logic in a click event listener
+    submitBtn.addEventListener("click", () => {
+      // Get the fresh value from the input right when the button is clicked
+      const table_number_value = Number(table_number.value);
+      
+      let i = 1;
+      let table = [];
+      
+      while (i <= 10) {
+        table.push(`${table_number_value} x ${i} = ${table_number_value * i}\n`);
+        i++; // CRITICAL: Increment i to avoid an infinite loop!
+      }
+
+      // Use .join("") to turn the array into text without commas
+      paragraph.textContent = table.join("");
+    });
+  </script>
+</body>
+
+</html>
