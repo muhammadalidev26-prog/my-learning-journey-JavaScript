@@ -1,0 +1,3 @@
+New File created via Git Bash and Ouwould be pushed to GitHub via Git Bash
+-- Just Learning giGit Bash
+
