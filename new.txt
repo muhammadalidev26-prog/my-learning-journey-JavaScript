@@ -1,4 +1,2 @@
 Created New File via Git Bash and Puwould push it to GitHub via Git Bash later..
--- Just Learning Git, Hehe
-
-# and Made this change on github website
+I am learning Git and GitHub and I am just about to finish it so wish me luck!
