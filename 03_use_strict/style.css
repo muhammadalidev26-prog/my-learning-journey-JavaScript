@@ -1,0 +1,16 @@
+
+body {
+  background-color: #212121;
+  color: #ccc;
+  font: 1.1rem / 1.5 sans-serif;
+}
+
+.shortcut {
+  padding: 5px;
+  border: 1px solid white;
+}
+
+.code {
+  color: #39ff14;
+  font-family: monospace;
+}
