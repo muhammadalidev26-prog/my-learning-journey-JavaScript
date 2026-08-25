@@ -5,7 +5,7 @@ const button = document.getElementById("helloButton");
 
 // 2. Add the click event listener and trigger the alert function
 button.addEventListener("click", function() {
-    alert("Hello World!");
+    alert("All Hail Adones!");
 });
 
 console.log("NOTE: Don't paste any piece of code in order hack or steal information");
