@@ -38,7 +38,7 @@ console.log( +apples + +oranges ); // 5
 // why does it convert the strings to number before adding them, that's because of operator precendence and unary has the highest precendence in js
 
 // the longer variant
-// alert( Number(apples) + Number(oranges) ); // 5
+// console.log( Number(apples) + Number(oranges) ); // 5
 
 
 // Increment / Decrement
@@ -57,14 +57,13 @@ console.log(`after decrement ${num6}`);
 // Prefix
 // It increments the value and returns it
 
+
+// Postfix / Suffix
+// Returns the current value first, then increments.
 let age = 16;
 
 console.log(age++); // 16
 console.log(age); // 17
-
-// Postfix / Suffix
-// Returns the current value first, then increments.
-
 
 
 // Basic Operators

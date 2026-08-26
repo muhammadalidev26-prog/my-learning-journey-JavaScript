@@ -40,8 +40,8 @@ console.log("x(25) > y(20)", x > y);   // true
 console.log("x(25) < y(20)", x < y);   // false
 
 // Greater than or equal to (>=) and Less than or equal to (<=)
-console.log('x(25) >= y(20)', x >= 15); // true
-console.log('x(25) <= y(20)', y <= 20); // true
+console.log('x(25) >= y(20)', x >= y); // true
+console.log('x(25) <= y(20)', x <= y); // true
 
 
 // String Comparison

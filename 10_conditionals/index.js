@@ -12,7 +12,7 @@ const form = document.getElementById("myForm");
 // Listen for the submit event
 form.addEventListener("submit", function (event) {
   // Get the input value and trim extra spaces
-  const inputValue = document.getElementById("adones").value.trim();
+  const inputValue = document.getElementById("input-field").value.trim();
 
   // Check if the value matches "jake" (case-insensitive)
   if (inputValue.toLowerCase() === "adones") {
@@ -23,12 +23,12 @@ form.addEventListener("submit", function (event) {
     alert('Hell Yeah! Adones 🗿');
   }
 
-  else if (inputValue.toLowerCase() === "joffrey") {
+  else if (inputValue.toLowerCase() === "jeffrey") {
     event.preventDefault();
-    alert("Ah Hell Nah! Joffrey ain't the Boss")
+    alert("Ah Hell Nah! Jeffrey ain't the Boss 😤🤬")
   }
 
   else {
-    alert("Try again, you were close")
+    alert("Try again..")
   }
 });

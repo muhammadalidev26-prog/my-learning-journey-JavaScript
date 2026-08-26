@@ -15,4 +15,4 @@ console.log('"123z"', Number("123z") );      // NaN (error reading a number at "
 console.log( true, Number(true) );        // 1
 console.log( false, Number(false) );       // 0
 console.log( null, Number(null) );       // 0
-console.log( undefined, Number(undefined) );       // 0
+console.log( undefined, Number(undefined) );       // NaN
