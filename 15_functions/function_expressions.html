@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Expressions in JavaScript</title>
+  <style>
+    body {
+      background: hsl(0 0% 10%);
+      color: hsl(0 0% 90%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // We can pass functions as values and using function expressions.
+    function ask(question, yes, no) {
+      if (confirm(question)) yes()
+      else no();
+    }
+
+    function showOk() {
+      alert("You agreed.");
+    }
+
+    function showCancel() {
+      alert("You canceled the execution.");
+    }
+
+    // usage: functions showOk, showCancel are passed as arguments to ask
+    ask("Do you agree?", function() {alert("You agreed.")}, function() {alert("You canceled the execution")});
+  </script>
+</body>
+
+</html>
