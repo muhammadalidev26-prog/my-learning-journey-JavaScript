@@ -49,3 +49,5 @@ while (num >= 1) {
   console.log(num);
   num--;
 }
+
+console.log(typeof(() => {return "jake"}));
