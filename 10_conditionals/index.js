@@ -23,9 +23,9 @@ form.addEventListener("submit", function (event) {
     alert('Hell Yeah! Adones 🗿');
   }
 
-  else if (inputValue.toLowerCase() === "jeffrey") {
+  else if (inputValue.toLowerCase() === "joffrey") {
     event.preventDefault();
-    alert("Ah Hell Nah! Jeffrey ain't the Boss 😤🤬")
+    alert("Ah Hell Nah! Joffrey ain't the Boss 😤🤬")
   }
 
   else {
