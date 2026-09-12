@@ -5,10 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    :root {
+      --clr-failure: #d00;
+      --clr-success: #0d0;
+      --border: #999;
+    }
+    body {
+      background: #111;
+      color: #eee;
+    }
+    input {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      margin: 1rem;
+      border: 2px solid transparent;
+      outline: none;
+      border-radius: 5px;
+      background: #333;
+      color: #eee;
+    }
+    input:focus {
+      border-color: var(--border);
+    }
+    input:user-invalid {
+      outline: 2px solid var(--clr-failure)
+    }
+    input:user-valid {
+      outline: 2px solid var(--clr-success)
+    }
+  </style>
 </head>
 
 <body>
 
+  <input type="email" placeholder="E.g: johndoe@gmail.com">
 
   <script src="index.js"></script>
   <script>
