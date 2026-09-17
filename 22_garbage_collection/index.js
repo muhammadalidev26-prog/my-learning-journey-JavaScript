@@ -39,4 +39,4 @@ let family = marry({
 delete family.father;
 delete family.mother.husband;
 
-console.log(family)
+console.log(family);
