@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: rgb(96, 82, 82);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    /*
+
+    Create an object calculator with three methods:
+
+        read() prompts for two values and saves them as object properties with names a and b respectively.
+        sum() returns the sum of saved values.
+        mul() multiplies saved values and returns the result.
+
+    */
+
+    let calculator = {
+      read() {
+        this.a = +prompt('first value: ', 5);
+        this.b = +prompt('second value: ', 8);
+      },
+      sum() {
+        alert(this.a + this.b)
+      },
+      mul() {
+        alert(this.a * this.b)
+      }
+    }
+    calculator.read();
+    calculator.sum();
+    calculator.mul();
+
+  </script>
+</body>
+
+</html>
