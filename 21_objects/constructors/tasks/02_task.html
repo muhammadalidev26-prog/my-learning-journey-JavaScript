@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background: #151515;
+      color: #ddd;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="results"></div>
+
+  <script>
+
+    function Calculator() {
+      this.read = function () {
+        this.a = +prompt('First Value', 10);
+        this.b = +prompt('Second Value', 15);
+      }
+      this.sum = function () {
+        return this.a + this.b
+      }
+      this.mul = function () {
+        return this.a * this.b
+      }
+    }
+
+    let calculator = new Calculator();
+    calculator.read();
+    alert("sum "+ calculator.sum());
+    alert("multiplication "+ calculator.mul());
+
+  </script>
+</body>
+
+</html>
