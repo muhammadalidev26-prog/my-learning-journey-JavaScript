@@ -17,7 +17,7 @@ console.log(newUser.name);
 
 user.name = "person";
 console.log(user.name); // person, as expected
-console.log(newUser.name); // It also changed even though we only modified the value of user not
+console.log(newUser.name); // It also changed even though we only modified the value of user not newUser
 
 // Cloning a object without referencing to same object
 let user03 = {};

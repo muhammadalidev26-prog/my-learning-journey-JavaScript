@@ -11,7 +11,7 @@ let person = {
   height: '5 feet 9 inches'
 }
 
-// If a overwrite the value of person there would be no reference to the object,
+// If I overwrite the value of person there would be no reference to the object,
 //  so JavaScript Garbage Collectors will junk the data and free the memoryy 
 person = 'jake' // Reference to object lost, hence the object would be junked.
 

@@ -35,7 +35,7 @@ let grocceryCart = {
 };
 
 console.log(grocceryCart); // { Apple: 4 }
-console.log(grocceryCart.Apple);
+console.log(grocceryCart.Apple); // 4
 
 // Property Value Shorthand
 // In real life, we often use existing variables as property names
