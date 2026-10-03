@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style> 
+    body { background: #222 }
+  </style>
+</head>
+<body>
+  
+  <script>
+    // Symbols don't autoconvert to Strings;
+
+    alert(`${100}- autoConverted to string`)
+    // alert(`${Symbol()}- couldn\' be autoConverted to string`) // TypeError: Cannot convert Symbol to String
+    alert(`${Symbol().toString()}- Explicitly converting Symbol to string via Symbol().toString`) // TypeError: Cannot convert Symbol to String
+  </script>
+</body>
+</html>
