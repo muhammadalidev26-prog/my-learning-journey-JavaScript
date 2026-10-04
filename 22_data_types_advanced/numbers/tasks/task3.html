@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    // Repeat until the next input is number
+
+    function readNumber() {
+
+      let returnValue;
+      while (true) {
+        let num = prompt( 'Enter a valid number: ');
+
+        if (num == '' || num == null) {
+          returnValue = null;
+          break;
+        }
+        if (!isNaN(num)) {
+          returnValue = +num;
+        } else if (isNaN(num)) {
+          continue;
+        }
+        return returnValue;
+      }
+    }
+
+    let value = readNumber();
+    alert( `Function returned ${value}`);
+
+  </script>
+</body>
+</html>
