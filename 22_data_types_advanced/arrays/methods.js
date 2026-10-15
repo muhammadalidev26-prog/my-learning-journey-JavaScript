@@ -18,3 +18,11 @@ console.log( ages ) // 14 removed
 // unshift() adds the element to the beginning of the array
 ages.unshift( 80 )
 console.log( ages ) // 80 added in the beginning
+
+
+// toString() - returns a string representation of the array
+// Arrays have their own implementation of toString method that returns a comma-separated list of elements.
+
+let arrToStr = [1, 2, 3, 4, 5];
+console.log( arrToStr.toString() ); // "1,2,3,4,5"
+
