@@ -26,5 +26,8 @@ separator();
 
 arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
-let reducedArr2 = arr2.reduce( (v1, v2) => v1 + v2 )
+let reducedArr2 = arr2.reduce( (sum, current) => sum + current, 0) // we should always specify the initial value (0 here)
 console.log( reducedArr2 )
+
+
+
