@@ -21,7 +21,6 @@ describe("pow", function () {
       makeTest(x, 2);
     }
   });
-
 });
 
 // testing Sum Function

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #121212;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // alert(), prompt(), confirm()
+      // let message = alert('jake is a person');
+      // let question = prompt('Why are you a person?', 'jake');
+      // let affirmation = confirm('You sure you are a person??');
+      // prompt returns null on cancel and confirm return boolean values
+
+      // console.log( `prompt return value ${question}` )
+      // console.log( `confirm return value ${affirmation}`)
+
+      // let userName = prompt('What\'s your name? ');
+      // if (userName) alert(`Hello ${userName}`)
+      // else alert(`Hello Stranger`)
+
+      // Write `checkAge(age)`: return `true` if `age > 18`, otherwise ask `confirm("Did parents allow you?")` and return its result. Use `||`.
+
+      function checkAge(age) {
+        return age > 18 || confirm("Did your parentts allow you? ");
+      }
+      console.log(checkAge(17))
+    </script>
+  </body>
+</html>
