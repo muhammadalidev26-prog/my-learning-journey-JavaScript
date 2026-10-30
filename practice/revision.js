@@ -336,3 +336,5 @@ function randomInt2(min, max) {
 } 
 
 console.log( randomInt2(10, 15) );
+
+
