@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Burning Candle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 40%, #1b1b2f 0%, #0a0a12 70%);
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+  }
+
+  .scene { position: relative; }
+
+  /* Ambient glow cast by the flame */
+  .glow {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    width: 320px;
+    height: 320px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255,160,60,.35) 0%, transparent 65%);
+    animation: glowPulse 2s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  /* ---- Flame ---- */
+  .flame-wrap {
+    position: absolute;
+    bottom: 158px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    animation: sway 3s ease-in-out infinite;
+  }
+
+  .flame {
+    position: relative;
+    width: 34px;
+    height: 90px;
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    background: linear-gradient(to top, #ff5100 0%, #ffb300 45%, #fff59d 100%);
+    filter: blur(.4px);
+    transform-origin: bottom center;
+    animation: flicker .12s ease-in-out infinite alternate;
+    box-shadow: 0 0 40px 12px rgba(255,140,0,.55),
+                0 0 90px 30px rgba(255,90,0,.25);
+  }
+
+  /* Inner blue core */
+  .flame::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 34px;
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    background: linear-gradient(to top, #1e88ff 0%, #6ec6ff 60%, transparent 100%);
+    opacity: .85;
+  }
+
+  /* Bright white-hot tip */
+  .flame::after {
+    content: "";
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 40px;
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    background: linear-gradient(to top, #fffde7 0%, transparent 90%);
+    opacity: .9;
+  }
+
+  /* ---- Wick ---- */
+  .wick {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(#333, #111);
+    border-radius: 2px;
+  }
+
+  /* ---- Wax body ---- */
+  .candle {
+    position: relative;
+    width: 90px;
+    height: 170px;
+    border-radius: 10px 10px 6px 6px;
+    background: linear-gradient(90deg, #d9c9a3 0%, #fff8e7 35%, #efe1bd 65%, #cdbb90 100%);
+    box-shadow: inset -10px 0 18px rgba(0,0,0,.15),
+                inset 10px 0 14px rgba(255,255,255,.4);
+  }
+
+  /* Melted top rim */
+  .candle::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -3px;
+    width: 96px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #fffdf5 0%, #e8d8b0 70%, #d3c096 100%);
+    box-shadow: inset 0 -4px 6px rgba(0,0,0,.12);
+  }
+
+  /* Dripping wax */
+  .drip {
+    position: absolute;
+    top: 4px;
+    width: 12px;
+    background: linear-gradient(#fffdf5, #e6d5ad);
+    border-radius: 0 0 8px 8px;
+  }
+  .drip.d1 { left: 8px;  height: 46px; }
+  .drip.d2 { right: 14px; height: 30px; }
+
+  /* Plate */
+  .plate {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 26px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #6b6b7a 0%, #3a3a46 70%);
+    box-shadow: 0 10px 30px rgba(0,0,0,.6);
+  }
+
+  /* ---- Smoke particles (JS-generated) ---- */
+  .smoke {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(200,200,210,.35);
+    filter: blur(4px);
+    pointer-events: none;
+  }
+
+  @keyframes flicker {
+    0%   { transform: scaleY(1)    scaleX(1)    rotate(-1deg); }
+    50%  { transform: scaleY(1.08) scaleX(.94)  rotate(1deg); }
+    100% { transform: scaleY(.95)  scaleX(1.05) rotate(-.5deg); }
+  }
+  @keyframes sway {
+    0%,100% { transform: translateX(-50%) rotate(-2deg); }
+    50%     { transform: translateX(-50%) rotate(2deg); }
+  }
+  @keyframes glowPulse {
+    from { opacity: .7; transform: translateX(-50%) scale(.95); }
+    to   { opacity: 1;  transform: translateX(-50%) scale(1.05); }
+  }
+  @keyframes rise {
+    0%   { opacity: .5; transform: translate(-50%, 0) scale(1); }
+    100% { opacity: 0;  transform: translate(calc(-50% + var(--drift)), -140px) scale(2.6); }
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="glow"></div>
+    <div class="flame-wrap"><div class="flame"></div></div>
+    <div class="wick"></div>
+    <div class="candle">
+      <span class="drip d1"></span>
+      <span class="drip d2"></span>
+    </div>
+    <div class="plate"></div>
+  </div>
+
+<script>
+  // Spawn drifting smoke puffs above the flame
+  const scene = document.querySelector('.scene');
+
+  function makeSmoke() {
+    const s = document.createElement('div');
+    s.className = 'smoke';
+    // random horizontal drift for organic movement
+    s.style.setProperty('--drift', (Math.random() * 40 - 20) + 'px');
+    const dur = 2.5 + Math.random() * 1.5;
+    s.style.animation = `rise ${dur}s ease-out forwards`;
+    scene.appendChild(s);
+    setTimeout(() => s.remove(), dur * 1000);
+  }
+
+  setInterval(makeSmoke, 350);
+</script>
+</body>
+</html>
